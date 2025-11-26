@@ -582,17 +582,17 @@
 
         showDialog(title, content, actions) {
             const backdrop = document.createElement('div');
-            backdrop.className = 'modal-dialog-backdrop';
+            backdrop.className = 'te-modal-backdrop';
 
             const dialog = document.createElement('div');
-            dialog.className = 'modal-dialog';
+            dialog.className = 'te-modal-dialog';
             dialog.innerHTML = `
                 <h3>${title}</h3>
-                <div class="modal-dialog-content">${content}</div>
-                <div class="form-actions"></div>
+                <div class="te-modal-content">${content}</div>
+                <div class="te-form-actions"></div>
             `;
 
-            const actionsContainer = dialog.querySelector('.form-actions');
+            const actionsContainer = dialog.querySelector('.te-form-actions');
             actions.forEach(action => {
                 const btn = document.createElement('button');
                 btn.className = `toolbar-btn ${action.primary ? 'primary' : ''}`;

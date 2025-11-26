@@ -569,8 +569,8 @@
     color: #fca5a5;
 }
 
-/* Modal Dialogs */
-.modal-dialog-backdrop {
+/* Modal Dialogs - namespaced to avoid Bootstrap conflicts */
+.te-modal-backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -580,7 +580,7 @@
     z-index: 10001;
 }
 
-.modal-dialog {
+.te-modal-dialog {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -596,26 +596,26 @@
     z-index: 10002;
 }
 
-.modal-dialog h3 {
+.te-modal-dialog h3 {
     margin: 0 0 16px 0;
     font-size: 16px;
     color: #fff;
 }
 
-.form-group {
+.te-form-group {
     margin-bottom: 16px;
 }
 
-.form-group label {
+.te-form-group label {
     display: block;
     font-size: 12px;
     color: #888;
     margin-bottom: 6px;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+.te-form-group input,
+.te-form-group select,
+.te-form-group textarea {
     width: 100%;
     padding: 10px 12px;
     background: #1a1b1e;
@@ -625,14 +625,14 @@
     font-size: 13px;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+.te-form-group input:focus,
+.te-form-group select:focus,
+.te-form-group textarea:focus {
     outline: none;
     border-color: #6366f1;
 }
 
-.form-actions {
+.te-form-actions {
     display: flex;
     justify-content: flex-end;
     gap: 8px;
