@@ -1,0 +1,27 @@
+# Voxta application files (not part of this tool)
+wwwroot/assets/index-*
+wwwroot/assets/lucide-*
+wwwroot/assets/three-*
+wwwroot/assets/codemirror-*
+wwwroot/assets/markdownit-*
+wwwroot/assets/qrcode-*
+wwwroot/images/
+wwwroot/favicon.ico
+Resources/
+Data/
+*.dll
+*.exe
+*.pdb
+*.xml
+*.json
+!package.json
+
+# Backups
+*.bak
+
+# Node
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
