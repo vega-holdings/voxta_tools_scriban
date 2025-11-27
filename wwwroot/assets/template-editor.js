@@ -557,6 +557,7 @@
                         </div>
                         <div class="footer-actions">
                             <button class="toolbar-btn" id="btn-backup">Backup Originals</button>
+                            <button class="toolbar-btn primary" id="btn-apply">Apply Changes</button>
                         </div>
                     </footer>
                 </div>
@@ -690,6 +691,7 @@
             document.getElementById('btn-diff').addEventListener('click', () => this.showDiff());
             document.getElementById('btn-backup').addEventListener('click', () => this.backupOriginals());
             document.getElementById('btn-save-disk').addEventListener('click', () => this.saveToDisk());
+            document.getElementById('btn-apply').addEventListener('click', () => this.applyChanges());
         },
 
         async open() {
@@ -1196,6 +1198,35 @@
                 state.isDirty = false;
                 this.updateStatus();
                 UI.showToast('Template saved to disk!', 'success');
+            }
+            return success;
+        },
+
+        async applyChanges() {
+            if (!state.currentTemplate) {
+                UI.showToast('No template selected', 'error');
+                return;
+            }
+
+            if (!state.isDirty) {
+                // No changes, just refresh
+                if (confirm('No unsaved changes. Refresh page to reload templates?')) {
+                    window.location.reload();
+                }
+                return;
+            }
+
+            if (!confirm(`Save and apply changes to ${state.currentTemplate}?\n\nThis will save to disk and refresh the page.`)) {
+                return;
+            }
+
+            const success = await TemplateAPI.saveTemplate(state.currentTemplate, state.modifiedContent);
+
+            if (success) {
+                UI.showToast('Applying changes...', 'success');
+                setTimeout(() => {
+                    window.location.reload();
+                }, 500);
             }
         },
 
