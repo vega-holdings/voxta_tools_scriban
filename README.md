@@ -58,6 +58,7 @@ The server runs on port 5385 and provides:
 5. Edit templates in the main editor
 6. Save versions using the right panel (stored in browser localStorage)
 7. Click "Save to Disk" to write changes to the actual template files
+8. **Refresh the Voxta page** (or start a new chat) to load the updated template - no restart required
 
 ## File Structure
 
